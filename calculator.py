@@ -4,11 +4,10 @@ def button_click(num):
     equation_text.set(equation_text.get() + str(num))
     window.update()
 
-    
-    pass
-
 def equals():
-    pass
+    sum = str(equation_text.get())
+    equation_text.set(eval(sum))
+    window.update()
 
 def clear():
     pass
