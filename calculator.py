@@ -1,6 +1,10 @@
 from tkinter import * 
 
 def button_click(num):
+    equation_text.set(equation_text.get() + str(num))
+    window.update()
+
+    
     pass
 
 def equals():
@@ -20,7 +24,7 @@ btnnum = 0
 
 equation_text = StringVar()
 
-label = Label(window, text="equation_text", font=("Verdana", 40))
+label = Label(window, textvariable=equation_text, font=("Verdana", 40))
 label.pack()
 
 frame = Frame(window)
@@ -28,9 +32,9 @@ frame = Frame(window)
 
 for row in range(rows):
     for column in range(columns):
-        btnnum +=1 
+        btnnum +=1
         button = Button(frame, width=4, height=4, text=f"{btnnum}",
-                        command= lambda : button_click(f'{i}'))
+                            command= lambda num=btnnum: button_click(num))
         button.grid(row=row, column=column)
 
 btn_add = Button(frame, width=4, height=4, text="+",
