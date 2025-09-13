@@ -10,7 +10,8 @@ def equals():
     window.update()
 
 def clear():
-    pass
+    equation_text.set("")
+    window.update()
 
 
 window = Tk()
@@ -70,6 +71,13 @@ btn_equal = Button(frame, width=4, height=4, text="=",
                  command=equals)
 
 btn_equal.grid(row=3, column=2)
+
+btn_clear = Button(frame, width=4, height=4, text="C",
+                 command=clear)
+
+btn_clear.grid(row=0, column=4)
+
+
 
 frame.pack()
 
