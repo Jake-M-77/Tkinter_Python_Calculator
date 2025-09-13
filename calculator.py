@@ -24,7 +24,8 @@ btnnum = 0
 
 equation_text = StringVar()
 
-label = Label(window, textvariable=equation_text, font=("Verdana", 40))
+label = Label(window, textvariable=equation_text, font=("Verdana", 40),
+              width=12, height=2)
 label.pack()
 
 frame = Frame(window)
@@ -80,6 +81,8 @@ btn_clear.grid(row=0, column=4)
 
 
 frame.pack()
+
+window.title("Calculator")
 
 
 window.mainloop()
