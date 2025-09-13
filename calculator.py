@@ -5,9 +5,15 @@ def button_click(num):
     window.update()
 
 def equals():
-    sum = str(equation_text.get())
-    equation_text.set(eval(sum))
-    window.update()
+
+    try:
+        sum = str(equation_text.get())
+        equation_text.set(eval(sum))
+        window.update()
+    except ZeroDivisionError:
+        equation_text.set("Zero Div Err")
+    except SyntaxError:
+        equation_text.set("Invalid Syntax")
 
 def clear():
     equation_text.set("")
