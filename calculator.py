@@ -13,6 +13,11 @@ def clear():
     equation_text.set("")
     window.update()
 
+def backspace():
+    text = str(equation_text.get())
+    equation_text.set(text[:-1])
+    window.update()
+
 
 window = Tk()
 
@@ -78,11 +83,18 @@ btn_clear = Button(frame, width=4, height=4, text="C",
 
 btn_clear.grid(row=0, column=4)
 
+btn_backspace = Button(frame, width=4, height=4, text="⌫",
+                 command=backspace)
+
+btn_backspace.grid(row=1, column=4)
+
 
 
 frame.pack()
 
 window.title("Calculator")
+
+window.config(background="grey")
 
 
 window.mainloop()
