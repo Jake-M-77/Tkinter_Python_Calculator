@@ -7,13 +7,18 @@ def button_click(num):
 def equals():
 
     try:
-        sum = str(equation_text.get())
-        equation_text.set(eval(sum))
-        window.update()
+        if str(equation_text.get()) == "0000":
+            equation_text.set("1729")
+            window.update()
+            window.after(1000, lambda: equation_text.set(""))
+        else:
+            sum = str(equation_text.get())
+            equation_text.set(eval(sum))
+            window.update()
     except ZeroDivisionError:
-        equation_text.set("Zero Div Err")
+            equation_text.set("Zero Div Err")
     except SyntaxError:
-        equation_text.set("Invalid Syntax")
+            equation_text.set("Invalid Syntax")
 
 def clear():
     equation_text.set("")
